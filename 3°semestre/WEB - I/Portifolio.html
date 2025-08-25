@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/estilo.css">
+    <title>Portifolio</title>
+</head>
+<body>
+
+      <header id="inicio">
+      
+      <section class="section__nav">
+      
+        <figure>
+            <img class="img-logo-inicio" src="img/Logo Alan Mondego com Brackets.png" alt="Minha logo">
+          </figure>
+   
+        <nav class="nav__cabecalho">
+          <a href="index.html">Início</a>
+          <a href="QuemSomos.html">Quem Somos</a>
+          <a href="Portifolio.html">Portifólio</a>
+           <a href="minicurriculo.html">Currículo</a>
+            <a href="contato.html">Contato</a>
+        </nav>
+      </section>
+
+      <section>
+        <section id="secao_pos_nav">
+          <h1>Portifólio</h1>
+          <p>Conheca meus projetos e trabalhos realizados até aqui.</p>
+        </section>
+      </section>
+    </header>
+
+
+    <main>
+     
+      <section id="projetos-container" class="caixas_gerais">
+      
+      </section>
+
+
+      
+    </main>
+
+    <footer id="contato">
+
+      <section class="footer_geral">
+
+
+
+
+
+  <section class="itens">
+  <h2>Alan Mondego</h2>
+        <p>
+          Desenvolvedor em busca da primeira vaga , buscando sempre aprender mais
+        </p>
+
+        <figure>
+          <a href="https://www.instagram.com/alanmondego_/" target="_blank">
+
+             <img src="img/instagram.png" alt="icon instagram">
+          </a>
+              <a href="https://github.com/Alan-mondego" target="_blank">
+
+             <img src="img/github.png" alt="icon github">
+          </a>
+              <a href="https://www.linkedin.com/in/alan-v-mondego-pimenta-81a46928b/" target="_blank">
+
+             <img src="img/linkedin.png" alt="icon linkedin">
+          </a>
+         
+        </figure>
+      </section>
+
+      <section class="itens">
+        <h3 style="font-weight: 900;">Links Rápidos</h3>
+
+        <ul class="lista_referencias">
+          <li>
+            <a href="#inicio">Inicio</a>
+          </li>
+
+          <li>
+            <a href="#inicio">Quem Somos</a>
+          </li>
+          <li>
+            <a href="#inicio">Portifólio</a>
+          </li>
+          <li>
+            <a href="#inicio">Curriculo</a>
+          </li>
+          <li>
+            <a href="#inicio">Contato</a>
+          </li>
+        </ul>
+      </section>
+
+      <section class="itens">
+        <h3>Contatos</h3>
+
+        <ul class="lista_referencias">
+          <li class="contato-item">
+<img src="img/mensagem.png" alt="icon mensagem">
+          <p>alanmondego@gmal.com</p>
+          </figure>
+          </li>
+          <figure>
+            <li class="contato-item">
+<img src="img/telefone.png" alt="icon telefone">
+          <p>(98) 9 83565359</p>
+          </figure>
+          </li>
+          <li class="contato-item">
+<img src="img/localizacao.png" alt="icon localizacao">
+          <p>São Luis - MA</p>
+          </figure>
+          </li>
+          <figure>
+        </ul>
+      </section>
+      </section>
+
+ <hr style="width: 70%; margin: 20px auto;">
+
+ <p style="text-align: center;"> © 2025 Copyright - Desenvolvido por Alan Mondego</p>
+      
+      </footer>
+    
+    
+<script>
+  
+  const container = document.getElementById('projetos-container');
+  
+
+  container.innerHTML = '<p style="text-align: center; width: 100%;">Buscando projetos no GitHub...</p>';
+
+ 
+  fetch('https://api.github.com/users/Alan-mondego/repos')
+    .then(response => {
+      if (!response.ok) {
+        throw new Error('Não foi possível buscar os repositórios. Verifique o nome de usuário.');
+      }
+      return response.json();
+    })
+    .then(repositorios => {
+      
+      container.innerHTML = '';
+
+    
+      repositorios.forEach(repo => {
+        const caixaProjeto = document.createElement('section');
+        caixaProjeto.className = 'caixas'; 
+
+    
+        caixaProjeto.innerHTML = `
+          <h3>${repo.name}</h3>
+          <p class="repo-descricao">${repo.description || 'Este repositório não tem uma descrição.'}</p>
+          <div class="projeto-footer">
+            <span class="linguagem">${repo.language || 'N/D'}</span>
+            <a href="${repo.html_url}" target="_blank" class="repo-link">Ver no GitHub</a>
+          </section>
+        `;
+      
+        container.appendChild(caixaProjeto);
+      });
+    })
+    .catch(error => {
+      
+      container.innerHTML = `<p style="text-align: center; width: 100%; color: #ff6b6b;">${error.message}</p>`;
+    });
+</script>
+</html>

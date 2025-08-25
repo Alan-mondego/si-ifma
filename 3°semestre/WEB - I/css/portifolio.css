@@ -1,0 +1,138 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    
+}
+
+
+body,html{
+  background-color: #0F172A;
+  height: 100%;
+  color: #F1F5F9;
+}
+
+.section__nav{
+ display: flex;
+ flex-direction: column; 
+ align-items: center;
+background-color: #1E293B;
+ border: 1px solid white;
+ padding-bottom: 40px;
+}
+
+
+
+.img-logo-inicio{
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  border: 5px solid #1f2937; 
+}
+
+a{
+  text-decoration: none;
+  color: white;
+  cursor: pointer;
+}
+
+.nav__cabecalho {
+  padding: 20px 50px;
+  padding-top: 20px; 
+  display:flex;
+  flex-wrap: wrap;
+  background-color:  #1f2937;
+  gap: 50px;
+  border-radius: 50px;
+ align-items: center;
+  color :white;
+  justify-content: center;
+}
+
+#secao_pos_nav{ 
+   display: flex;
+   align-items: center;
+   flex-direction: column;
+   padding: 40px;
+   color: white;
+   background-color: #1f2937;
+   font-size: 30px;
+}
+#secao_pos_nav h1{
+  color: #22D3EE;
+}
+#secao_pos_nav p{
+  color: #22D3EE;
+}
+
+.footer_geral{
+   height: 100%;
+   color: white;
+   display: flex;
+   justify-content: space-between;
+   border-radius: 10px;
+
+}
+.itens{
+  margin-left: 40px;
+  color: white;
+  width: 25vw;
+ 
+
+}
+main{
+padding: 40px 0; 
+
+}
+  padding: 40px;
+}
+.caixas_gerais{
+  display: flex;
+  justify-content: center; /* Centraliza os cards */
+  flex-wrap: wrap; /* Permite que os cards quebrem a linha */
+  gap: 40px;
+  padding: 0 20px; /* Adiciona um respiro nas laterais */
+}
+.caixas{
+  background-color :#1f2937;
+  flex-basis: 380px; /* Largura base para cada card */
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between; /* Garante que o rodapé do card fique embaixo */
+  color: #F1F5F9;
+  border-radius: 10px;
+  padding: 30px;
+  min-height: 200px; /* Altura mínima para consistência */
+  transition: transform 0.3s ease;
+}
+
+.caixas:hover {
+  transform: translateY(-5px);
+}
+
+.caixas h3 {
+  color: #22D3EE;
+  margin-bottom: 15px;
+}
+
+/* Estilos específicos para os cards de projeto do GitHub */
+.projeto-footer {
+  margin-top: 20px;
+  padding-top: 15px;
+  border-top: 1px solid #334155;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.linguagem {
+  background-color: #22D3EE;
+  color: #0F172A;
+  padding: 4px 12px;
+  border-radius: 15px;
+  font-size: 0.8rem;
+  font-weight: bold;
+}
+.lista_referencias{
+  list-style-type: none;
