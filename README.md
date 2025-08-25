@@ -31,8 +31,9 @@ O conteúdo está dividido por semestre, com foco nas principais disciplinas e n
 Sinta-se à vontade para explorar os projetos e o código-fonte de cada disciplina.
 
 🚀 Como Clonar o Repositório
-Para clonar este repositório em sua máquina local, utilize o seguinte comando no terminal:
+# Clone este repositório
+```bash
 git clone https://github.com/Alan-mondego/si-ifma.git
 
-Em seguida, entre na pasta do projeto:
+# Acesse a pasta do projeto
 cd si-ifma
